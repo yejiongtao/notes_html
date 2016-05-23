@@ -1,0 +1,222 @@
+1.标题：<h1>最大，<h6>最小
+    <h1 align="center"></h1>
+    浏览器会自动地在标题的前后添加空行。
+        （默认情况下，HTML 会自动地在块级元素前后添加一个额外的空行，比如段落、标题元素前后。）
+    搜索引擎使用标题为您的网页的结构和内容编制索引。
+    因为用户可以通过标题来快速浏览您的网页，所以用标题来呈现文档结构是很重要的。
+    应该将 h1 用作主标题（最重要的），其后是 h2（次重要的），再其次是 h3，以此类推。（不仅仅是大小的差别）
+
+    注释：<!--这是注释-->
+
+2.链接:<a href="http://www.w3school.com.cn">This is a link</a>
+
+3.图像：<img src="w3school.jpg" width="104" height="142" />
+
+4.严格来说，所有元素都必须被关闭，即使目前的浏览器可以识别未被关闭的元素，也要养成一个好习惯。
+    于是 <br /> 而不要写 <br>
+    <hr />水平线
+  HTML 标签对大小写不敏感,但是推荐用小写。
+
+5.<body bgcolor="green">
+
+6.属性值应该始终被包括在引号内。
+    双引号是最常用的，不过使用单引号也没有问题。
+    在某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号，例如：
+        name='Bill "HelloWorld" Gates'
+
+7.适用于大多数 HTML 元素的属性：
+    class	规定元素的类名（classname）
+    id	规定元素的唯一
+    style	规定元素的行内样式（inline style）
+    title	规定元素的额外信息（可在工具提示中显示）
+
+8.段落<p>
+    浏览器会自动地在段落的前后添加空行。（<p> 是块级元素）
+    
+    注意：当显示页面时，浏览器会移除源代码中多余的空格和空行。所有连续的空格或空行都会被算作一个空格。需要注意的是，HTML 代码中的所有连续的空行（换行）也被显示为一个空格。
+    （所以要实现换行得用<br />）
+
+    另外：段落的行数依赖于浏览器窗口的大小。如果调节浏览器窗口的大小，将改变段落中的行数。
+
+9.文本格式化标签：
+    <b>	定义粗体文本。
+    <big>	定义大号字。
+    <em>	定义着重文字。
+    <i>	定义斜体字。
+    <small>	定义小号字。
+    <strong>	定义加重语气。
+    <sub>	定义下标字。
+    <sup>	定义上标字。
+    <ins>	定义插入字。（下划线）
+    <del>	定义删除字。（中划线）
+
+10.预格式文本（保留文本中的空格和换行，很适合输出计算机代码）
+    注意：出来的文本比normal的小一点。
+    <pre>
+    for(size_t i=0;i!=100;i++)
+        ;
+    </pre>
+
+11.“计算机输出”标签
+    <code>	定义计算机代码。
+    <kbd>	定义键盘码。
+    <samp>	定义计算机代码样本。
+    <tt>	定义打字机代码。
+    <var>	定义变量。
+
+12.联系方式
+提示：<address> 标签不应该用于描述通讯地址，除非它是联系信息的一部分。
+提示：<address> 元素通常连同其他信息被包含在 <footer> 元素中。
+    <address>
+    Written by <a href="mailto:webmaster@example.com">Donald Duck</a>.<br> 
+    Visit us at:<br>
+    Example.com<br>
+    Box 564, Disneyland<br>
+    USA
+    </address>
+
+13.缩写（有一些浏览器把鼠标放上去后会显示全称）
+    （<acronym>并非标准元素，用<abbr>替换）
+    <abbr title="World Wide Web">www</abbr>
+
+14.文字方向
+    <bdo dir="rtl">this is rtl</bdo>
+
+15.引用：
+    <blockquote>这是长的引用。出来的效果是一整段缩进进来</blockquote>
+    <q>这是短的引用，出来的效果是用双引号括住其中的内容</q>
+    <cite>这是书籍、网站等的引用，一般会加一个超链接指过去。还可以把引用自动整理成表格什么的</cite>
+
+16.
+<dfn>用于特殊标记一个名词。一般在第一次出现的时候用，其实不用也是ok的</dfn>
+
+17.样式表的三种使用方法：
+    1）外部样式表
+        <head>
+            <link rel="stylesheet" href="1.css" type="text/css"/>
+        </head>
+    2）内部样式表
+        <head>
+            <style type="text/css">
+            body {background-color: red}
+            p {margin-left: 20px}
+            </style>
+        </head>
+    3）内联样式
+        <p style="color: red; margin-left: 20px">
+        This is a paragraph
+        </p>
+
+18.<div>一个小节，这样就可以统一设置这个块里面的样式了</div>
+<span>小节，常用方法：
+    HTML:
+        <p class="tip"><span>提示：</span>... ... ...</p>
+    CSS:
+        p.tip span {
+            font-weight:bold;
+            color:#ff9955;
+            }
+
+19.超链接：
+    两种使用 <a> 标签的方式：
+        通过使用 href 属性 - 创建指向另一个文档的链接
+        通过使用 name 属性 - 创建文档内的书签
+    target属性：链接的打开方式
+        <a href="#beginning" target="_blank">打开新页面</a>
+        _top表示跳出框架在整个页面显示。
+    锚点：在某元素处使用name或者id属性，超链接中用#访问。也可以定位到某个页面中的某个位置：
+        <a href="index.html#beginning"></a>
+        (假如浏览器找不到已定义的命名锚，那么就会定位到文档的顶端。不会有错误发生。)
+        ！！！！注意！有些浏览器是用name定位，有些是用id，所以两个都要有！
+            <p name="beginning" id="beginning">sss</p>
+
+20.插入图像
+    <img src="..." alt="Horse"> alt属性是指替换文本，当图像无法载入的时候，会显示这个文本，使用alt是个好习惯。
+    <body background="22.jpg">使用背景图片（动图也可以。当图片不够大时会重复使用）
+    <img align="bottom">设置对齐方式，默认是bottom（即图片下边与文字下边对齐），还有middle,top
+    <p><img align="left">带有图像的一个段落，如果align设为left，则图像在文字的左侧。当然也有right</p>
+
+创建图像映射（带有可供点击区域的图像地图）
+    <img>中的 usemap 属性可引用 <map> 中的 id 或 name 属性（取决于浏览器），所以我们应同时向 <map> 添加 id 和 name 属性。
+    <img src="" alt="" usemap="#mymap" height="" width="" />
+    <map name="mymap" id="mymap">
+        <area shape="circle" coords="100,100,50" alt="" href="" />
+        <area shape="rect" coords="200,300,400,500" alt="" href="" target="" />
+    </map>
+
+21.表格
+    <table border="1">  border一般为0或1，当然也可以是很大的值（默认是0）
+        <caption>我的标题</caption>
+        <tr>
+            <th>table header，表头，就是在第一行的地方，加粗显示。</th>
+            <th>header</th>
+        </tr>
+        <tr>
+            <td>table data,内容。如果没有内容，为了让边框正常显示，应该用占位符（no-breaking space）</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+
+    要把第一列变成表头的话，就在相应的地方用<th>替换<td>就可以了.
+    跨行或跨列的单元格：
+        <td colspan="2">
+        <th rowspan="3">
+    一个单元格里面可以是任何内容（嵌套另一个表格什么的）
+    <table cellpadding="10">单元格边距，即内容距离边框的距离。
+    <table cellspacing="10">单元格间距，单元格之间的距离。
+    <table bgcolor="red">
+    <table background="22.jpg">
+    <td bgcolor="red">
+    <th align="left">
+    <td align="right">
+    <table frame="box">边框，box是上下左右都有，above是只有上面，below只有下面，vsides只有左右，hsides只有上下
+
+    关于<thead><tbody><tfoot>，是用于区分表格内容的，一般不会改变外观，但是可以通过css来改变。区分开后就可以在滚动时只滚动body的部分，而且打印的时候可能会在每一页都自动加上head和foot。
+    <head>
+        <style type="text/css">
+            thead {}
+            tbody {}
+            tfoot {}
+        </style>
+    </head>
+    <body>    
+        <table>
+            <thead>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <td></td>
+                <td></td>
+            </tbody>
+            <tfoot>
+                <td></td>
+                <td></td>
+            </tfoot>
+        </table>
+    </body>
+
+    <col><colgroup>应该很少用，所以就算了吧
+
+22.列表
+    无序列表
+        <ul type="disc">type是指前面那个小黑点的形状，默认是disc原点，circle是空心圈，square是方黑点
+            <li>这里面可以是任何东西</li>
+            <li></li>
+        </ul>
+    有序列表
+        <ol>（默认是的序号是123）
+            <li></li>
+        </ol>
+        <ol type="A">
+        <ol type="a">
+        <ol type="I">
+        <ol type="i">
+    列表的嵌套是不错的，会有缩进，无序的那些小点还会长得不一样。
+    定义列表
+        <dl>
+            <dt>定义列表项目</dt>
+            <dd>定义列表的描述</dd>
+            <dt>软件</dt>
+            <dd>好玩的东西</dd>
+        </dl>

@@ -1,0 +1,63 @@
+1.XHTML 是作为 XML 被重新设计的 HTML。
+    如何从 HTML 转换到 XHTML
+        向每张页面的第一行添加 XHTML <!DOCTYPE>
+        向每张页面的 html 元素添加 xmlns 属性（namespace）
+        把所有元素名改为小写
+        关闭所有空元素
+        把所有属性名改为小写
+        为所有属性值加引号
+
+    XHTML属性不能简写，比如<input checked>是错误的，<input checked="checked" />才是正确的
+    应用id属性代替name属性
+
+    lang 属性应用于几乎所有的 XHTML 元素。它定义元素内部的内容的所用语言的类型。
+        如果在某元素中使用 lang 属性，就必须添加额外的 xml:lang，像这样：
+        <div lang="no" xml:lang="no">Heia Norge!</div>
+
+2.有三种XHTML文档类型
+    strict：需要干净的标记，避免表现上的混乱。请与层叠样式表配合使用。
+        <!DOCTYPE html
+            PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+    transitional：当需要利用 HTML 在表现上的特性时，并且当需要为那些不支持层叠样式表的浏览器编写 XHTML 时。
+        （在strict的基础上加上那些不赞成使用的元素和属性。）
+        <!DOCTYPE html
+            PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+    frameset：需要使用HTML框架将浏览器窗口分割为两部分或更多框架时。
+        （在transitional的基础上加上框架）
+        <!DOCTYPE html
+            PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+            "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+
+3.XHTML模块化：
+    通过使用模块化的 XHTML，产品和软件设计者可以：
+        选择被某种设备所支持的元素。
+        在不打破 XHTML 标准的情况下，使用 XML 对 XHTML 进行扩展。
+        针对小型设备，对 XHTML 进行简化。
+        通过添加新的 XML 功能（比如 MathML, SVG, 语音和多媒体），针对复杂的应用对 XHTML 进行扩展。
+        定义 XHTML 框架，比如 XHTML BASIC （针对移动设备的 XHTML 子集）。
+
+4.XHTML事件（以属性方式存在，特定的事件会触发脚本）
+    http://www.w3school.com.cn/xhtml/xhtml_eventattributes.asp
+    窗口事件（载入和卸下时）
+    表单元素事件（onchange,onsubmit,onreset等等）
+    键盘事件（onkeypress,onkeydown,onkeyup）
+    鼠标事件
+
+5.记住：请最大限度地使用 CSS 来进行布局。在 web 标准的世界里，XHTML 标记与表现无关，它只与文档结构有关。
+
+6.结构化
+    id与class的区别：
+        id在整个文档中必须是唯一的，用在只有一个的地方，比如导航栏。而class可以出现多次
+    id的作用：
+        id 属性不可思议地强有力。它具有以下的能力：
+        作为样式表选择器，使我们有能力创作紧凑的最小化的 XHTML。
+        作为超文本的目标锚，取代过时的 name 属性。
+        作为从基于 DOM 的脚本来定位特定元素的方法。
+        作为对象元素的名称。
+        作为一种综合用途处理 (general purpose processing) 的工具（在 W3C 的例子中，“当把数据从HTML页面中提取到数据库，或将 HTML 文档转换为其他格式等情况下，作为域识别工具来使用。”）。
+
+    使用<div>来划分页面的逻辑布局，并配合id使用进行标记。
